@@ -3,16 +3,18 @@ class LikesController < ApplicationController
   
   
   def create
-    like = Like.create(user_id: current_user.id, micropost_id: params[:micropost_id])
-    like.save
-    flash[:notice] = 'Like it'
-    redirect_to micropost
+    current_user = User.find(params[:user.id])
+    current_user.iine(micropost)
+    flash[:notice] = 'Like it!'
+    redirect_to root_url
   end
   
   
   def destroy
-    like = Like.find_by(user_id: current_user.id, micropost_id: params[:micropost_id])
-    like.destroy
+    current_user = User.find(params[:user.id])
+    current_user.iine_off(micropost)
+    flash[:success] = "Remove like!"
+    redirect_to root_url
   end
   
   
