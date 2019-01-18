@@ -40,7 +40,7 @@ class User < ApplicationRecord
   
   
   def iine_off(micropost)
-    like = self.likes.find_by(like_id: self.user.id)
+    like = self.likes.find_by(micropost_id: micropost.id)
     like.destroy if like
   end 
   

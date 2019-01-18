@@ -3,7 +3,7 @@ class LikesController < ApplicationController
   
   
   def create
-    current_user = User.find(params[:user.id])
+    micropost = Micropost.find(params[:micropost_id])
     current_user.iine(micropost)
     flash[:notice] = 'Like it!'
     redirect_to root_url
@@ -11,7 +11,7 @@ class LikesController < ApplicationController
   
   
   def destroy
-    current_user = User.find(params[:user.id])
+    micropost = Micropost.find(params[:micropost_id])
     current_user.iine_off(micropost)
     flash[:success] = "Remove like!"
     redirect_to root_url
