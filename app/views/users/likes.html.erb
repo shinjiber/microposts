@@ -1,0 +1,17 @@
+<h1>Your Favorite Microposts</h1>
+<% if @likes.any? %>
+
+<ul class='media-list'>
+<% @likes.each do |like| %>
+  <div>
+    <li class='label label-info'>
+<%= like.micropost.user.name%>
+    </li>  
+    <li class='alert alert-warning' role='alert'>
+<%= like.micropost.content %>
+    </li>
+  </div>
+    <% end %>
+</ul>
+
+<% end %>
