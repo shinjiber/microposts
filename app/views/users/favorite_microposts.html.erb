@@ -1,0 +1,20 @@
+    <h1>
+<%= @user.name%>
+'s Favorite microposts
+    </h1>
+
+
+<% @user.favorite_microposts.each do |favorite_micropost| %>
+<ul class='media-list'>
+        <div>
+            <li class='label label-info'>
+<%= favorite_micropost.user.name %>
+            </li>
+        
+            <li class='alert alert-warning' role='alert'>
+<%= favorite_micropost.content %>
+            </li>
+        </div>
+</ul>
+<% end %>
+
